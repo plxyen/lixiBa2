@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mở bao lì xì</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      width: 220px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff3b2f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>🎁 MỞ BAO LÌ XÌ 🎁</h2>
+  <p>Phụ huynh vui lòng nhập <b>mật mã</b><br></p>
+
+  <input type="password" id="password" placeholder="Nhập mật mã">
+  <br>
+  <button onclick="checkPassword()">Xác nhận</button>
+
+  <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+  function checkPassword() {
+    const correctPassword = "LIXI2026"; // 👉 đổi mật mã tại đây
+    const input = document.getElementById("password").value;
+
+    if (input === correctPassword) {
+      window.location.href = "lixi.html"; // trang lì xì thật
+    } else {
+      document.getElementById("error").innerText =
+        "❌ Mật mã chưa đúng, mời Phụ huynh thử lại!";
+    }
+  }
+</script>
+
+</body>
+</html>
